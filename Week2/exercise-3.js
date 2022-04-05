@@ -21,9 +21,11 @@ const execQuery = (query) => {
 
 const PRINT_AUTHORS_MENTORS = `
 SELECT 
-  author_no, author_name, mentor 
-FROM 
-  authors;
+  a.author_no, a.author_name as author , m.author_name as mentor
+FROM
+  authors a
+INNER JOIN authors m ON 
+a.mentor = m.author_no;
 `;
 
 const PRINT_AUTHORS_AND_PAPERS = `
