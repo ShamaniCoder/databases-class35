@@ -1,0 +1,17 @@
+{
+  "name": "week3",
+  "version": "1.0.0",
+  "description": "## Agenda",
+  "main": "Exercise-4-MongoDbCRUD.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.5.0",
+    "mysql": "^2.18.1",
+    "prompt": "^1.2.2"
+  }
+}

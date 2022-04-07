@@ -1,7 +1,7 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
 const uri =
-  "mongodb+srv://hyfuser:hyfpassword@cluster0.zg5li.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://hyfuser:hyfpassword@cluster0.8inhm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const seedDatabase = async () => {
   const client = new MongoClient(uri, {

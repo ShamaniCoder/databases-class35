@@ -1,3 +1,4 @@
-1. I use Sequel Ace to export all tables as a CSV.
-2. To import files to MongoDB I use MongoDB Compass.
-3. I created the database and imported tables by MongoDB Compass application.
+1. I use MySQL workbench to export all tables as a CSV.
+    - select city/country/countrylanguage tables > export csv files on my desktop 
+    
+2. I created the database and city/country/countrylanguage tables and imported tables by MongoDB Compass application.
