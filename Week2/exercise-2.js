@@ -27,25 +27,24 @@ const seedDatabase = async () => {
       FOREIGN KEY(paper_id) REFERENCES research_papers(paper_id),
       FOREIGN KEY(author_no) REFERENCES authors(author_no)
       );`;
-  const CANCEL_FK_CHECK = "SET FOREIGN_KEY_CHECKS = 0;";
   const INSERT_VALUES_AUTHORS = `
     INSERT INTO 
         authors (author_no, author_name, university, date_of_birth, h_index, gender, mentor) 
     VALUES  
-        (100, 'George', 'University of Helsinki', '1985-03-08', 27, 'm', 101),
-        (101, 'Ali', 'University of Edinburgh', '1987-11-06', 35, 'm', 102),
-        (102, 'Aykut', 'Harvard University', '1980-11-05', 22, 'm', 103),
-        (103, 'Stephen', 'University of Berlin', '1970-09-08', 40, 'm', 104),
-        (104, 'McCarthy', 'University of Dublin', '1995-01-11', 32, 'm', 105),
-        (105, 'Talha', 'University of Colombia', '1995-04-12', 39, 'm', 106),
-        (106, 'Burak', 'Ankara University', '1994-08-15', 50, 'm', 107),
-        (107, 'Ensar', 'Istanbul University', '1984-03-16', 69, 'm', 108),
-        (108, 'Federico', 'University of Amsterdam', '1982-10-15', 59, 'm', 110),
-        (109, 'Basher', 'University of Damascus', '1990-02-15', 33, 'm', 111),
-        (110, 'Ashley', 'Oxford University', '1982-09-13', 38, 'f', 112),
-        (111, 'Ayshe', 'Middle East University', '1980-08-22', 12, 'f', 113),
-        (112, 'Helen', 'Pitsburg University', '1989-03-12', 56, 'f', 114),
-        (113, 'Nico', 'Oslo University', '1978-03-03', 52, 'm', 109),
+        (100, 'George', 'University of Helsinki', '1985-03-08', 27, 'm', NULL),
+        (101, 'Ali', 'University of Edinburgh', '1987-11-06', 35, 'm', 100),
+        (102, 'Aykut', 'Harvard University', '1980-11-05', 22, 'm', 101),
+        (103, 'Stephen', 'University of Berlin', '1970-09-08', 40, 'm', 102),
+        (104, 'McCarthy', 'University of Dublin', '1995-01-11', 32, 'm', 103),
+        (105, 'Talha', 'University of Colombia', '1995-04-12', 39, 'm', 104),
+        (106, 'Burak', 'Ankara University', '1994-08-15', 50, 'm', 105),
+        (107, 'Ensar', 'Istanbul University', '1984-03-16', 69, 'm', 106),
+        (108, 'Federico', 'University of Amsterdam', '1982-10-15', 59, 'm', 107),
+        (109, 'Basher', 'University of Damascus', '1990-02-15', 33, 'm', 108),
+        (110, 'Ashley', 'Oxford University', '1982-09-13', 38, 'f', 109),
+        (111, 'Ayshe', 'Middle East University', '1980-08-22', 12, 'f', 110),
+        (112, 'Helen', 'Pitsburg University', '1989-03-12', 56, 'f', 111),
+        (113, 'Nico', 'Oslo University', '1978-03-03', 52, 'm', 102),
         (114, 'Anna', 'University of New York', '1983-05-29', 28, 'f', 100 )  
     `;
 
@@ -130,7 +129,6 @@ const seedDatabase = async () => {
   try {
     await execQuery(CREATE_RESEARCH_PAPERS_TABLE);
     await execQuery(CREATE_RESEARCH_PAPERS_AUTHORS_TABLE);
-    await execQuery(CANCEL_FK_CHECK);
     await execQuery(INSERT_VALUES_AUTHORS);
     await execQuery(INSERT_RESEARCH_PAPERS);
     await execQuery(INSERT_RESEARCH_PAPERS_AUTHORS);
