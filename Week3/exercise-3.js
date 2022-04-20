@@ -41,9 +41,9 @@ async function queryDatabase() {
     //const select_query = `SELECT Population FROM ${country} WHERE Name = '${name}' and code = '${code}'`;
 
     // 2. Escaping the parameter ( replacing the unwanted characters)
-    const select_query = `select Population from country = ${connection.escape(country)} WHERE name = ${connection.escape(
+    const select_query = `select Population from ${country} WHERE name = ${connection.escape(
       name
-    )} and code = ${connection.escape(code)}`;
+    )} and code = ${connection.escape(code)} and country = ${connection.escape(country)}`;
 
     connection.connect();
 
