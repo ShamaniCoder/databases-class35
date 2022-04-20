@@ -1,3 +1,11 @@
+
+/* 
+Question 1- Give an example of a value that can be passed as name and code that would
+      take advantage of SQL-injection and (fetch all the records in the database).
+Answer => Both name and code parameters 'OR'1=1 can be used. 
+*/
+
+
 const prompt = require("prompt");
 const mysql = require("mysql");
 const util = require("util");
@@ -29,7 +37,11 @@ async function queryDatabase() {
     name = input2.name;
     code = input3.code;
 
-    const select_query = `select Population from ${country} WHERE name = ${connection.escape(
+    // 1. Naive way of passing the parameter to the query
+    //const select_query = `SELECT Population FROM ${country} WHERE Name = '${name}' and code = '${code}'`;
+
+    // 2. Escaping the parameter ( replacing the unwanted characters)
+    const select_query = `select Population from country = ${connection.escape(country)} WHERE name = ${connection.escape(
       name
     )} and code = ${connection.escape(code)}`;
 
