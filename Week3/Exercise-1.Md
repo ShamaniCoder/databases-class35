@@ -7,7 +7,7 @@
    Dinner, Venue, and Food entities should be extracted as a separated table.
 
 3. Name all the tables and columns that would make a 3NF compliant solution.
-    ##### member
+    ##### members
     - member_id (PK)
     - member_name
     - adresse_id (FK)
@@ -17,16 +17,19 @@
     - street_number
     - street_name
 
-    ##### dinner
+    ##### dinners
     - dinner_id (PK)
     - dinner_date
     - venue_description
     - food_code (FK)
 
-    ##### food
+    ##### foods
     - food_code (PK)
     - food_description
 
-    ##### dinner_member 
+    ##### dinner_members 
     - dinner_id (FK)
     - member_id (FK)
+    ##### dinner_food
+    - dinner_id
+    - food_code
